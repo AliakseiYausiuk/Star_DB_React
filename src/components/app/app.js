@@ -13,8 +13,8 @@ const App = () => {
       <Header />
       <RandomPlanet />
 
-      <div className="row mb2">
-        <div className="col-md-6">
+      <div className="row col-md-12">
+        <div className="col-md-4">
           <ItemList />
         </div>
         <div className="col-md-6">

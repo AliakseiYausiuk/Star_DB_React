@@ -1,27 +1,27 @@
-.header {
+.nav {
   margin-top: 0.5rem;
   padding-left: 10px;
 }
 
-.header ul li {
+.nav ul li {
   list-style: none;
   margin: 0;
   padding: 0.5rem 1rem;
   border-radius: 3px;
 }
 
-.header ul li:hover {
+.nav ul li:hover {
   background-color: #444;
 }
 
-.header a:hover {
+.nav a:hover {
   text-decoration: none;
 }
 
-.header h3 a {
+.nav h3 a {
   color: white;
 }
 
-.header h3 a:hover {
+.nav h3 a:hover {
   color: #00bc8c;
 }

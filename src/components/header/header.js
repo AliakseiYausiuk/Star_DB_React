@@ -4,8 +4,8 @@ import "./header.css";
 
 const Header = () => {
   return (
-    <header className="header">
-      <nav>
+    <header>
+      <nav className="nav d-flex">
         <h3>
           <a href="#">Star DB</a>
         </h3>
