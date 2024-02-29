@@ -25,7 +25,7 @@ export default class SwapiService {
     return res.results;
   }
 
-  getPlanets(id) {
+  getPlanet(id) {
     return this.getResource(`/planets/${id}`);
   }
 
