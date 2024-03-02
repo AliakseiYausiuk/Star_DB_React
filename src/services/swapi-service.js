@@ -43,7 +43,7 @@ export default class SwapiService {
 
   _extractId(item) {
     const idRegExp = /\/([0-9]*)\/$/;
-    return item.planet.url.match(idRegExp)[1];
+    return item.url.match(idRegExp)[1];
   }
 
   _transformPlanet(planet) {
@@ -74,17 +74,9 @@ export default class SwapiService {
     return {
       id: this._extractId(person),
       name: person.name,
-      gender: person.name,
+      gender: person.gender,
       birthYear: person.birthYear,
       eyeColor: person.eyeColor,
     };
   }
 }
-
-const swapi = new SwapiService();
-
-swapi.getAllPeople().then((people) => {
-  people.forEach((p) => {
-    console.log(p.name);
-  });
-});
