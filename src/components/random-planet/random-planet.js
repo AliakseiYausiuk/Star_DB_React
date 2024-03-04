@@ -48,7 +48,7 @@ export default class RandomPlanet extends Component {
     const content = hasData ? <PlanetView planet={planet} /> : null;
 
     return (
-      <div className="random-planet">
+      <div className="random-planet card col-md-10">
         {errorMessage}
         {spinner}
         {content}
@@ -61,14 +61,16 @@ const PlanetView = ({ planet }) => {
   const { id, name, population, rotationPeriod, diameter } = planet;
 
   return (
-    <>
-      <img
-        className="planet-image"
-        src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
-      />
-      <div>
-        <h4>{name}</h4>
-        <ul className="list-group list-group">
+    <div className="row g-0">
+      <div className="col-md-2">
+        <img
+          className="planet-image img-fluid rounded-start"
+          src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
+        />
+      </div>
+      <div className="col-md-2 item">
+        <h4 className="card-title">{name}</h4>
+        <ul className="list-group">
           <li className="list-group-item">
             <span className="term">Population</span>
             <span>{population}</span>
@@ -83,6 +85,6 @@ const PlanetView = ({ planet }) => {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 };
