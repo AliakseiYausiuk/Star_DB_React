@@ -8,7 +8,7 @@ const ErrorIndicator = () => {
     <div className="error-indicator">
       <img src={icon} alt="error icon" />
       <span className="boom">BOOM</span>
-      <span>Error 404</span>
+      <span>Error 404 refresh the page</span>
       <span>but we already sent droids to fix it</span>
     </div>
   );
