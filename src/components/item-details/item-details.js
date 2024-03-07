@@ -9,6 +9,7 @@ export default class ItemDetails extends Component {
 
   state = {
     item: null,
+    image: null,
   };
 
   componentDidMount() {
@@ -22,29 +23,28 @@ export default class ItemDetails extends Component {
   }
 
   updateItem() {
-    const { itemId, getData } = this.props;
+    const { itemId, getData, getImageUrl } = this.props;
     if (!itemId) {
       return;
     }
 
     getData(itemId).then((item) => {
-      this.setState({ item });
+      this.setState({ item, image: getImageUrl(item) });
     });
   }
 
   render() {
-    if (!this.state.item) {
+    const { item, image } = this.state;
+
+    if (!item) {
       return <Spinner />;
     }
 
-    const { id, name, gender, birthYear, eyeColor } = this.state.item;
+    const { id, name, gender, birthYear, eyeColor } = item;
 
     return (
       <div className="person-details card">
-        <img
-          className="person-image"
-          src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
-        />
+        <img className="person-image" src={image} />
 
         <div className="card-body">
           <h4>{name}</h4>
