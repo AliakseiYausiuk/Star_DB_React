@@ -8,6 +8,7 @@ import PersonDetails from "../item-details/item-details";
 import ErrorIndicator from "../error-indicator/error-indicator";
 import Row from "../row/row";
 import ErrorBoundry from "../error-boundry/error-boundry";
+import ItemDetails from "../item-details/item-details";
 
 export default class PeoplePage extends Component {
   swapiService = new SwapiService();
@@ -35,9 +36,7 @@ export default class PeoplePage extends Component {
         {(i) => `${i.name} (${i.birthYear})`}
       </ItemList>
     );
-    const personDetails = (
-      <PersonDetails personId={this.state.selectedPerson} />
-    );
+    const personDetails = <ItemDetails personId={this.state.selectedPerson} />;
 
     return (
       <ErrorBoundry>
