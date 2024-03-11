@@ -13,6 +13,15 @@ import Row from "../row/row";
 import ItemDetails from "../item-details/item-details";
 import { Record } from "../item-details/item-details";
 
+import {
+  PersonDetails,
+  PlanetDetails,
+  StarshipDetails,
+  PersonList,
+  PlanetList,
+  StarshipList,
+} from "../sw-components";
+
 export default class App extends Component {
   swapiService = new SwapiService();
 
@@ -70,8 +79,10 @@ export default class App extends Component {
         <div className="button-row">
           <ErrorButton />
         </div>
-        <PeoplePage getData={getAllPeople} />
-        <Row left={personDetails} right={starshipDetails} />
+
+        <Row left={<PersonList />} right={<PersonDetails itemId={11} />} />
+        <Row left={<PlanetList />} right={<PlanetDetails itemId={4} />} />
+        <Row left={<StarshipList />} right={<StarshipDetails itemId={2} />} />
       </ErrorBoundry>
     );
   }
